@@ -66,11 +66,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
             } else {
                 None
             },
-            color: if let Some(c) = matches.value_of("colour") {
-                Some(c.into())
-            } else {
-                None
-            },
+            color: matches.value_of("colour").map(|c| c.into()),
         };
 
         if let Some(selector) = matches.value_of("selector") {
